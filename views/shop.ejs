@@ -1,0 +1,61 @@
+<%- include ('partials/head') %>
+<%- include ('partials/header') %>
+
+<main class="container-fluid">
+
+  <div class="jumbotron">
+    <h1>חנויות <%=shopParamCategory%> בראש העין</h1>
+    <p>מידע על חנויות אופניים בראש העין</p>
+     <a href="/shopping/<%=shopParamCategory%>/newshop">להוספת חנות חדשה </a>
+  </div>
+
+  <h2 class="text-center m-2 p-2">חנויות אופניים בראש העין</h2>
+  <hr class="clearfix w-100 ">
+
+  <section class="container-fluid">
+    <div class="row m-2 p-2 text-center" style="display:flex; flex-wrap:wrap;">
+     <%Shops.forEach(function(Shop){%>
+      <div class="col m-2 p-2">
+        <div class="card shadow" style="width: 18rem;">
+         <img src="<%=Shop.shopLogo%>" class="card-img-top">
+          <div class="card-body">
+           <h5 class="card-title"><%=Shop.shopName%></h5>
+           <h5 class="card-title"><%=Shop.shopDescription%></h5>
+           <h5 class="card-title"><%=Shop.shopAddresse%></h5>
+           <h5 class="card-title"><%=Shop.shopCity%></h5>
+           <h5 class="card-title"><%=Shop.shopTel%></h5>
+          </div>
+           <a class="btn btn-warning" href="/shopping/<%=shopParamCategory%>/<%=Shop._id%>/editshop">ערוך פרטי חנות</a>
+
+           <form class="" action="/shopping/<%=shopParamCategory%>/<%=Shop._id%>?_method=DELETE" method="post">
+             <button class="btn btn-danger">מחק חנות</button>
+           </form>
+
+        </div>
+      </div>
+    <%});%>
+
+          <!--  <h5 class="card-title">חנות אופניים 1 Shop </h5>
+            <p class="card-text">חנות אופניים 1 בראש העין נמצאת באזור התעשייה פארק אפק</p>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+  </section>
+
+  <h3 class="m-2 p-2 text-center">רשימת חנויות אופניים בראש העין</h3>
+
+<section>
+ <div class="list-group col-lg-4 col-md-6 p-2 m-2">
+  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-primary">A simple primary list group item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">A simple secondary list group item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-success">A simple success list group item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-danger">A simple danger list group item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-warning">A simple warning list group item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-info">A simple info list group item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-light">A simple light list group item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-dark">A simple dark list group item</a>
+ </div>
+</section>
+</main>
+
+<%- include ('partials/footer') %>

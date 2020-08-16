@@ -1,0 +1,7 @@
+nav, section, footer{
+  direction: rtl;
+}
+
+h1 {
+  color: #AF04E2;
+}

@@ -1,0 +1,43 @@
+<%- include ('partials/head') %>
+<%- include ('partials/header') %>
+
+<main class="container-fluid">
+  <div class="jumbotron">
+    <h1>הוסף חנות חדשה בראש העין</h1>
+    <hr class="clearfix w-100 ">
+    <p>מלא את השדות הבאים</p>
+  </div>
+
+ <div class="container">
+   <div class="row">
+    <form action="/shopping/<%=shopParamCategory%>" method="POST">
+      <div class="form-group">
+       <label for="exampleFormControlInput1">Shop name</label>
+       <input type="text" class="form-control" name="shopName" placeholder="shop name" required>
+       <input type="text" class="form-control" name="shopLogo" placeholder="image url" required>
+       <input type="text" class="form-control" name="shopCity" placeholder="city name" required>
+       <input type="tel" class="form-control" name="shopTel" placeholder="shop tel" pattern="[0-9]{3}-[0-9]{3}[0-9]{4}">
+      </div>
+      <div class="form-group">
+       <label for="exampleFormControlTextarea1">shop description</label>
+       <textarea class="form-control" id="exampleFormControlTextarea1"  name="shopDescription" rows="3"></textarea>
+      </div>
+   <button >submit!</button>
+ </form>
+ </div>
+</div>
+</main>
+
+<%- include ('partials/footer') %>
+
+
+<!-- <div class="form-group">
+  <label for="exampleFormControlSelect1">Example select</label>
+  <select class="form-control" id="exampleFormControlSelect1">
+    <option>אופניים</option>
+    <option>מחשבים</option>
+    <option>בגדים</option>
+    <option>מכולות</option>
+    <option>מספרות</option>
+  </select>
+</div> -->

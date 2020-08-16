@@ -1,0 +1,15 @@
+  <%- include ('partials/head') %>
+<%- include ('partials/header') %>
+
+<h1>this is the shopping categories page</h1>
+
+<%shoppingCategories.forEach(function(shoppingCategory){%>
+<div>
+  <h4><%=shoppingCategory.hebrewName%></h4>
+  <img src="<%=shoppingCategory.shopTypeImage%>">
+  <a href="/shopping/<%=shoppingCategory.shopType%>"><%=shoppingCategory.shopType%></a>
+</div>
+<%});%>
+
+
+<%- include ('partials/footer') %>
